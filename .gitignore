@@ -1,4 +1,4 @@
-factor model
+factor-model
 DeMiguel
 return_cv
 result2
@@ -8,4 +8,4 @@ figures_new2
 *.pdf
 *.pyc
 *.log
-
+code/.ipynb_checkpoints
