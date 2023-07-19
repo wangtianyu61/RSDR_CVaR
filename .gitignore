@@ -9,3 +9,5 @@ figures_new2
 *.pyc
 *.log
 code/.ipynb_checkpoints
+code/_pycache_
+output/*

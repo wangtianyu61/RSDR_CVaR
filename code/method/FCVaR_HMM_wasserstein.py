@@ -42,7 +42,7 @@ class FCVaR_HMM_wasserstein(strategy, strategy_cluster, resample):
         self.theta_param = theta_param
         self.coef = 1
         if self.portfolio_number < 10:
-            self.coef = 2 * self.cluster_number
+            self.coef = self.cluster_number
     def optimize_test(self, cluster_freq, num_time_in_cluster, train_return, test_return, weight_pre):
         (num_of_sample, port_num) = test_return.shape
         for i in range(self.cluster_number):
@@ -562,8 +562,9 @@ class FCVaR_HMM_wasserstein(strategy, strategy_cluster, resample):
         i = 0
         num_of_sample = len(self.df_select)
         num_of_train = len(self.df_train)
-        if self.portfolio_number <= 5:
-            dta_param = math.pow(num_of_train/self.coef, 1/self.portfolio_number)
+        dta_param = math.pow(num_of_train/self.coef, 1/self.portfolio_number)
+    
+
 
         pre_info = 0
         self.hist_theta = []
